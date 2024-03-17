@@ -1,0 +1,259 @@
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 1rem;
+    color: #232323;
+    background-color: #CFCFCF;
+    text-transform: uppercase;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+}
+
+/*header*/
+.header-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px 0px;
+    grid-template-areas:
+        "affxwrks contact cart";
+    width: 100vw;
+    font-size: 5vw;
+    z-index: 1;
+    position: absolute;
+}
+
+#affxwrks {
+    grid-area: affxwrks;
+    justify-self: start;
+}
+
+#contact {
+    grid-area: contact;
+    justify-self: center;
+}
+
+#cart {
+    grid-area: cart;
+    justify-self: end;
+}
+
+/*products*/
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "product-one product-two product-three"
+        "product-four product-five product-six";
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+#product-one {
+    grid-area: product-one;
+    overflow: hidden;
+    position: relative;
+}
+
+
+#product-two {
+    grid-area: product-two;
+    overflow: hidden;
+    position: relative;
+}
+
+#product-three {
+    grid-area: product-three;
+    overflow: hidden;
+    position: relative;
+}
+
+#product-four {
+    grid-area: product-four;
+    overflow: hidden;
+    position: relative;
+}
+
+#product-five {
+    grid-area: product-five;
+    overflow: hidden;
+    position: relative;
+}
+
+#product-six {
+    grid-area: product-six;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.product-description {
+    z-index: 3;
+    /*color: #81FF76;*/
+    color: white;
+    position: absolute;
+    bottom: 0;
+    mix-blend-mode: difference;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+}
+
+#product-one-description,
+#product-two-description,
+#product-three-description,
+#product-four-description,
+#product-five-description,
+#product-six-description {
+    display: none;
+}
+
+.product-description-bottom {
+    z-index: 3;
+    /*color: #81FF76;*/
+    color: white;
+    position: absolute;
+    mix-blend-mode: difference;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+}
+
+/*footer*/
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px 0px;
+    grid-template-areas:
+        "about lookbook year";
+    width: 100vw;
+    font-size: 5vw;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+}
+
+#about {
+    grid-area: about;
+    justify-self: start;
+}
+
+#lookbook {
+    grid-area: lookbook;
+    justify-self: center;
+}
+
+#year {
+    grid-area: year;
+    justify-self: end;
+}
+
+/*links*/
+a {
+    color: #232323;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #81FF76
+}
+
+/*button and menu*/
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+select {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*lookbook*/
+.lookbook-container {
+    overflow: scroll;
+    height: 100vh;
+    width: 100vw;
+}
+
+.lookbook-image {
+    height: 100vh;
+}
+
+/*swiper*/
+swiper-container {
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+swiper-slide img {
+    display: block;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+/*mobile*/
+@media screen and (max-width: 700px) {
+    .product-container {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 100vh 100vh 100vh 100vh 100vh 100vh;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "product-one"
+            "product-two"
+            "product-three"
+            "product-four"
+            "product-five"
+            "product-six";
+        height: 85vh;
+        width: 100vw;
+        position: relative;
+        overflow: scroll;
+    }
+
+    .product-description-bottom {
+        z-index: 3;
+        /*color: #81FF76;*/
+        color: white;
+        position: absolute;
+        bottom: 0;
+        mix-blend-mode: difference;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.75rem;
+    }
+
+    #product-one-description,
+    #product-two-description,
+    #product-three-description,
+    #product-four-description,
+    #product-five-description,
+    #product-six-description {
+        display: block;
+    }
+
+}
